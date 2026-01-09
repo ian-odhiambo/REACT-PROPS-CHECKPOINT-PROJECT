@@ -13,15 +13,18 @@ const PlayerListing = ({ player }) => {
   return (
     <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
       {/* Player Image Section */}
-      {player.imageUrl && (
-        <div className="h-48 overflow-hidden">
-          <img
-            src={player.imageUrl}
-            alt={player.name}
-            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-          />
-        </div>
-      )}
+      <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+  {/* Player Image Section */}
+  {player.imageUrl && (
+    <div className="h-48 flex items-center justify-center bg-gray-50">
+      <img
+        src={player.imageUrl}
+        alt={player.name}
+        className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md"
+      />
+    </div>
+  )}
+</div>
 
       <div className="p-6">
         {/* Header and  Name  */}
@@ -35,7 +38,7 @@ const PlayerListing = ({ player }) => {
                 <span className="text-sm font-medium text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">
                   {player.position || player.player}
                 </span>
-                <span className="text-sm text-gray-600">
+                <span className="text-sm text-gray-600 font-bold">
                   #{player.jerseyNumber}
                 </span>
               </div>
@@ -82,7 +85,6 @@ const PlayerListing = ({ player }) => {
           )}
         </div>
 
-        {/* Location - Action Button */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-6 pt-4 border-t border-gray-100"></div>
       </div>
     </div>
